@@ -109,3 +109,16 @@ main hr {
     background-color: #eee;
     height: 1px;
 }
+
+
+#maintext h2{
+   color:#a51417 !important;
+
+   font-weight: 500; 
+   font-size: 2rem;
+    
+}
+
+#aboutt h2{
+    color:#a51417 !important;
+}
