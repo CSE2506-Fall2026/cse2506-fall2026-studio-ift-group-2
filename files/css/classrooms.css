@@ -24,3 +24,27 @@ main li {
 .classroom p {
     font-size: 1.15em;
 }
+
+
+h1{ 
+    color:red; 
+}
+
+h1 { 
+    color: #a51417; 
+}
+
+.classroom > strong {
+    color: #a51417;
+    font-size: 24px;
+    font-weight: 600;
+}
+
+h1 {
+    color: #a51417 !important;
+    font-size: 40px !important;
+    font-weight: 400 !important;
+    letter-spacing: 0.4px !important;
+    line-height: 48px !important;
+    margin-bottom: 32px !important;
+}
