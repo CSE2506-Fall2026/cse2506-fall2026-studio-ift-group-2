@@ -3,22 +3,6 @@
     background-image: url("https://nurseryschool.wustl.edu/files/2015/03/group-holi.jpg");
 }
 
-.summer-camp-row {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    gap: 40px;
-}
-
-.summer-camp-text {
-    flex: 1;
-}
-
-.summer-camp-bear {
-    width: 300px;
-    height: auto;
-}
-
 h1 {
     color: #a51417 !important;
     font-size: 40px !important;
@@ -26,4 +10,106 @@ h1 {
     letter-spacing: 0.4px !important;
     line-height: 48px !important;
     margin-bottom: 32px !important;
+}
+
+.camp-layout {
+    display: flex;
+    align-items: stretch;      /* sidebar runs full content height */
+}
+
+.camp-layout main {
+    flex: 1;
+    min-width: 0;              /* prevents long words/links from overflowing into sidebar */
+    overflow-wrap: break-word;
+    margin-bottom: 0;          /* sidebar ends level with the closing hr */
+}
+
+.camp-layout main > hr:last-child {
+    margin-bottom: 0;
+}
+
+.camp-sidebar {
+    flex: 0 0 30%;
+    max-width: 420px;
+    background-color: #f0f0f0;
+    padding: 24px 28px 40px;
+    box-sizing: border-box;
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #000;
+}
+
+.sidebar-title {
+    text-align: center;
+    color: #a51417;
+    font-size: 36px;
+    font-weight: 400;
+    margin: 0 0 12px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #000;
+}
+
+.sidebar-group {
+    margin-top: 24px;
+    margin-bottom: 48px;
+}
+
+.sidebar-group h3 {            /* same sizing as common.css main h3 */
+    color: #a51417;
+    font-size: 27px;
+    font-weight: 400;
+    line-height: 37px;
+    margin: 0 0 12px;
+}
+
+.sidebar-item {
+    margin-bottom: 18px;
+    color: #000;
+}
+
+.sidebar-item strong {
+    display: block;
+    font-weight: 700;
+}
+
+.sidebar-item span {
+    display: block;
+    font-weight: 400;
+}
+
+.sidebar-bear {
+    display: block;
+    width: 100%;
+    max-width: 300px;
+    height: auto;
+    margin: 24px auto 0;
+}
+
+.camp-gallery {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);   /* one row spanning the full page width */
+    gap: 16px;
+    margin: 40px 60px 60px;
+}
+
+.camp-gallery img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+}
+
+@media (max-width: 900px) {
+    .camp-layout {
+        flex-direction: column;
+    }
+
+    .camp-gallery {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .camp-sidebar {
+        flex-basis: auto;
+        width: 100%;
+        max-width: none;
+    }
 }
