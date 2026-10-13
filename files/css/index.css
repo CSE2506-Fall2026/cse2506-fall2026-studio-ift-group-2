@@ -13,28 +13,107 @@
     font-size: 1.2rem;
 }
 
+/* ---------- Home hero: photo with Our Philosophy overlaid ---------- */
+.home-hero {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Shorter than the window so the next section peeks in and invites scrolling */
+    height: 60vh;
+    min-height: 420px;
+    max-height: 560px;
+    padding: 40px 60px;
+    overflow: hidden;
+    font-family: "Source Sans Pro", "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+.home-hero > img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    z-index: 0;
+}
+
+/* Light box behind the text so it stays readable over the photo */
+.home-hero-box {
+    position: relative;
+    z-index: 1;
+    max-width: 720px;
+    padding: 36px 44px;
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.93);
+    border-top: 6px solid #a51417;
+    border-radius: 6px;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.home-hero-box #maintext h2 {
+    font-size: 1.75rem;
+    line-height: 1.3;
+    margin-bottom: 16px;
+}
+
+.home-hero-box p {
+    text-align: left;
+    color: #555;
+    font-size: 1.05rem;
+    line-height: 1.5;
+}
+
+/* ---------- Visit Our School: call to action right below the hero ---------- */
 #visit-our-school {
     text-align: center;
     background-color: #eee;
-    padding: 80px;
+    border-left: 6px solid #a51417;
+    border-radius: 6px;
+    padding: 48px 60px;
     margin-bottom: 2em;
+}
+
+#visit-our-school h1 {
+    margin-bottom: 16px !important;
 }
 
 #visit-our-school p {
-    text-align: left;
-    margin-bottom: 2em;
+    max-width: 640px;
+    margin: 0 auto 1.5em;
     font-size: 1.25em;
 }
 
+/* Primary call-to-action button */
 #visit-our-school a {
-    color: #a51417;
-    border: #a51417;
-    border-width: 2px;
+    display: inline-block;
+    cursor: pointer;
+    color: #fff;
+    background-color: #a51417;
+    border: 2px solid #a51417;
     border-radius: 6px;
-    border-style: solid;
-    font-size: 1rem;
+    font-size: 1.15rem;
+    font-weight: 700;
     line-height: 1.1;
-    padding: 8px 20px;
+    padding: 14px 32px;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+#visit-our-school a:hover,
+#visit-our-school a:focus {
+    background-color: #fff;
+    color: #a51417;
+}
+
+/* Bold section labels */
+.home-label {
+    color: #a51417 !important;
+    font-size: 1.1rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 0.75em;
 }
 
 #column-view {
@@ -64,6 +143,7 @@
     text-align: left;
     color: white;
     font-size: 1.25em;
+    font-weight: 700;
 }
 
 .column a {
@@ -119,5 +199,23 @@ main hr {
     
 }
 
+@media (max-width: 800px) {
+    .home-hero {
+        height: auto;
+        max-height: none;
+        padding: 24px;
+    }
 
+    .home-hero-box,
+    #visit-our-school {
+        padding: 28px;
+    }
 
+    #column-view {
+        flex-direction: column;
+    }
+
+    .column {
+        width: 100%;
+    }
+}
