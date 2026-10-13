@@ -15,7 +15,8 @@ main {
 
 .stick {
     position: sticky;
-    top: 15px;
+    /* Clear the sticky menu bar at the top of the page */
+    top: 70px;
 }
 
 ul.subnav>.current_page_item>a {
@@ -50,4 +51,8 @@ ul.subnav ul a {
 
 .widget-area a {
     text-decoration: none;
+}
+/* Inside the study tracker, also clear the orange banner above the menu bar */
+#html-loc .stick {
+    top: 113px;
 }

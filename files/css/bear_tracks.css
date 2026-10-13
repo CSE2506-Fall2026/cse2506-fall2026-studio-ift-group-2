@@ -102,3 +102,13 @@ h1 {
     line-height: 48px !important;
     margin-bottom: 32px !important;
 }
+
+/* ---------- Programs side menu ---------- */
+ul.subnav .subnav-subitem a {
+    padding-left: 24px;
+}
+
+ul.subnav ul a[aria-current="page"] {
+    color: #3d3d3d;
+    text-decoration: underline;
+}

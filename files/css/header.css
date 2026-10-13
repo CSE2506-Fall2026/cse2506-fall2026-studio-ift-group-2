@@ -148,3 +148,84 @@ header a {
 .dropdown:hover .dropdown-content {
     display: block;
 }
+
+/* ---------- Flyout submenu (e.g. Programs > Enrichment Programs > Art) ----------
+   Links hold plain text only: the router reads the address from the clicked
+   element, so the arrow is drawn with ::after rather than a child tag. */
+.dropdown-sub {
+    position: relative;
+}
+
+.dropdown-content a.dropdown-sub-trigger {
+    white-space: nowrap;
+    padding-right: 36px;
+}
+
+.dropdown-sub-trigger::after {
+    content: "\203A";
+    position: absolute;
+    right: 14px;
+    font-size: 1.3em;
+    line-height: 1;
+}
+
+.dropdown-sub-content {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 100%;
+    min-width: 160px;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown-sub:hover .dropdown-sub-content,
+.dropdown-sub:focus-within .dropdown-sub-content {
+    display: block;
+}
+
+/* Keep the trigger highlighted while its flyout is open */
+.dropdown-sub:hover > .dropdown-sub-trigger {
+    background-color: #ddd;
+}
+
+
+/* ---------- Sticky menu bar ----------
+   The header is injected inside <ts-load data-name="header">, and
+   header[role="banner"] wraps both the site title and the menu. Neither is
+   taller than the header itself, so a sticky child could never move.
+   `display: contents` takes those wrappers out of the layout (their children
+   are unaffected) so the menu bar can stick to the top of the whole page. */
+ts-load[data-name="header"],
+header[role="banner"] {
+    display: contents;
+}
+
+#main-menu-container {
+    position: sticky;
+    top: 0;
+    /* Keep the bar and its dropdowns above page content (hero boxes, etc.) */
+    z-index: 1000;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+}
+
+/* Inside the study tracker, the orange banner (43px, also sticky) sits at
+   the top of the screen, so stick just below it instead of behind it. */
+#html-loc #main-menu-container {
+    top: 43px;
+}
+
+/* Keep all menu items on a single row so the sticky bar stays short */
+#main-menu-container .container {
+    max-width: 80em;
+}
+
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.dropdown .dropbtn {
+    padding: 14px 12px;
+}
