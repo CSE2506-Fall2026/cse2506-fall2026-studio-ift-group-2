@@ -149,44 +149,54 @@ header a {
     display: block;
 }
 
-/* ---------- Flyout submenu (e.g. Programs > Enrichment Programs > Art) ----------
+/* ---------- Mega menu (Classrooms) ----------
+   Three columns side by side instead of one long list:
+   all-class pages | enrichment programs | individual classrooms.
    Links hold plain text only: the router reads the address from the clicked
-   element, so the arrow is drawn with ::after rather than a child tag. */
-.dropdown-sub {
-    position: relative;
+   element, so no child tags go inside the <a>. */
+.dropdown:hover .dropdown-content.mega-menu,
+.dropdown:focus-within .dropdown-content.mega-menu {
+    display: flex;
 }
 
-.dropdown-content a.dropdown-sub-trigger {
-    white-space: nowrap;
-    padding-right: 36px;
+.mega-menu {
+    gap: 8px;
+    padding: 8px 0;
 }
 
-.dropdown-sub-trigger::after {
-    content: "\203A";
-    position: absolute;
-    right: 14px;
-    font-size: 1.3em;
-    line-height: 1;
+.mega-col {
+    display: flex;
+    flex-direction: column;
+    min-width: 180px;
 }
 
-.dropdown-sub-content {
-    display: none;
-    position: absolute;
-    top: 0;
-    left: 100%;
-    min-width: 160px;
-    background-color: #f9f9f9;
-    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+/* Thin rule between columns to show the three groups */
+.mega-col + .mega-col {
+    border-left: 1px solid #ddd;
 }
 
-.dropdown-sub:hover .dropdown-sub-content,
-.dropdown-sub:focus-within .dropdown-sub-content {
-    display: block;
+.dropdown-content a.mega-heading {
+    font-weight: bold;
 }
 
-/* Keep the trigger highlighted while its flyout is open */
-.dropdown-sub:hover > .dropdown-sub-trigger {
-    background-color: #ddd;
+/* Programs under the Enrichment heading are indented to read as its children */
+.dropdown-content a.mega-sub {
+    padding-left: 32px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+/* Narrow screens: stack the columns into one list */
+@media (max-width: 760px) {
+    .dropdown:hover .dropdown-content.mega-menu,
+    .dropdown:focus-within .dropdown-content.mega-menu {
+        flex-direction: column;
+    }
+
+    .mega-col + .mega-col {
+        border-left: none;
+        border-top: 1px solid #ddd;
+    }
 }
 
 
