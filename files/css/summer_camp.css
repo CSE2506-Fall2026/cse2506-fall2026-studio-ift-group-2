@@ -81,6 +81,51 @@ h1 {
     font-weight: 400;
 }
 
+/* Registration block on the overview page */
+.registration strong,
+.registration span {
+    display: block;
+    margin-bottom: 18px;
+}
+
+.registration .download {
+    color: #a51417;
+}
+
+/* Dates, Hours, and Tuition page: full-width schedule, camp and extended day side by side */
+.dates-box {
+    background: none;
+    padding: 0;
+    margin: 0 0 32px;
+    width: 100%;
+    max-width: none;
+}
+
+.dates-box .sidebar-title {
+    text-align: left;
+    font-size: 40px;
+    line-height: 48px;
+}
+
+.dates-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 48px;
+}
+
+.dates-grid .sidebar-group {
+    margin: 24px 0 0;
+}
+
+.dates-box .sidebar-item {
+    font-size: 19.2px;
+    line-height: 27.84px;
+}
+
+.camp-dates-page .summer-camp-text h3 {
+    margin-top: 12px;
+}
+
 .sidebar-bear {
     display: block;
     width: 100%;
@@ -108,11 +153,16 @@ h1 {
         flex-direction: column;
     }
 
+    .dates-grid {
+        grid-template-columns: 1fr;
+        gap: 0;
+    }
+
     .camp-gallery {
         grid-template-columns: repeat(3, 1fr);
     }
 
-    .camp-sidebar {
+    .camp-sidebar:not(.dates-box) {
         flex-basis: auto;
         width: 100%;
         max-width: none;

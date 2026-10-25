@@ -143,6 +143,18 @@ header a {
 }
 
 
+/* Gray one-line description under a menu link, telling what the page covers */
+
+.dropdown-content a .menu-desc {
+    display: block;
+    color: #777;
+    font-size: 0.85em;
+    margin-top: 2px;
+    white-space: nowrap;
+    pointer-events: none;      /* clicks land on the parent link, so the router and tracker see one item */
+}
+
+
 /* Show the dropdown menu on hover */
 
 .dropdown:hover .dropdown-content {
