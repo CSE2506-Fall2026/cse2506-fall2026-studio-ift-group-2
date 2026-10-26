@@ -243,3 +243,51 @@ main h3,
   font-weight: 600;
   color: #3d3d3d;
 }
+
+.staff-bio {
+  font-size: 15px;
+  line-height: 1.6;
+  margin-top: 12px;
+  margin-bottom: 10px;
+}
+
+.staff-read-more {
+  display: inline-block;
+  color: #a51417;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: underline;
+  margin-bottom: 15px;
+}
+
+.staff-read-more:hover {
+  color: #730e10;
+  text-decoration: none;
+}
+
+
+
+.individual-staff-member-inner-div {
+  display: flex;
+  align-items: flex-start;
+  gap: 25px;
+}
+
+.individual-staff-member-inner-div img {
+  width: 200px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.individual-staff-member-data {
+  flex: 1;
+  min-width: 0;
+}
+
+@media (max-width: 600px) {
+  .individual-staff-member-inner-div {
+    flex-direction: column;
+  }
+}
+
+
